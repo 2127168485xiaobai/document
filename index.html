@@ -1,25 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>蔬菜汁</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrapper {
+            display: flex;
+        }
+
+        .sidenav {
+            height: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #4caf50;
+            overflow-x: hidden;
+            padding-top: 20px;
+            padding-left: 0.5vw;
+            padding-right: 0.5vw;
+        }
+
+        .sidenav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+            background-color: #FF7F50;
+        }
+        .sidenav p {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+            color: #f1f1f1;
+            /* text-align: center; */
+        }
+
+        #content {
+            flex: 1;
+            padding: 1vm;
+        }
+
+        /* #content h2 {
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        #content h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        } */
+
+        #content pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        #content code {
+            font-family: Consolas, monospace;
+            font-size: 1.1rem;
+            color: #444;
+        }
+        
+        span.special-symbols {
+            color: red;
+        }
+
+        .introduce {
+            border-bottom: 2px solid rgb(202, 202, 202); 
+        }
+
+        .code {
+            display: flex;
+            align-items: center;
+            /* height: 1.5rem; */
+            background-color: #272822;
+            color: white;
+        }
+
+        .kuang {
+            margin-top: 20px;
+            border: #b6aaaa solid 2px;
+            border-radius: 10px; 
+            padding-left: 10px;
+            padding-right: 10px;
+            box-shadow: 5px 5px 15px 5px rgba(83, 80, 80, 0.15);
+        }
+
+    </style>
 </head>
 <body>
-    <h1>蔬菜</h1>
-    <h2>豌豆</h2>
-    <p>豌豆是指一种高产的小乔木，原产于亚洲，是一种重要的农作物。豌豆的营养价值较高，含有丰富的蛋白质、脂肪、维生素、矿物质、微量元素、钙、磷、铁等营养成分。豌豆的营养价值较高，营养成分丰富，具有很高的营养价值。豌豆的营养价值较高，营养成分丰富，具有很高的营养价值。</p>
-    <h2>白菜</h2>
-    <p>白菜是指一种高产的小乔木，原产于亚洲，是一种重要的农作物。白菜的营养价值较高，含有丰富的蛋白质、脂肪、维生素、矿物质、微量元素、钙、磷、铁等营养成分。白菜的营养价值较高，营养成分丰富，具有很高的营养价值。白菜的营养价值较高，营养成分丰富，具有很高的营养价值。</p>
+    <div id="wrapper">
+        <div class="sidenav">
+            <p>蔬菜汁</p>
+            <a href="javascript:void(0)" onclick="showContent('intro')">介绍</a>
+            <a href="javascript:void(0)" onclick="showContent('example1')">bot变量</a>
+            <a href="javascript:void(0)" onclick="showContent('example2')">注释</a>
+            <a href="javascript:void(0)" onclick="showContent('example3')">文件操作函数</a>
+            <a href="javascript:void(0)" onclick="showContent('example4')">赋予值</a>
+            <a href="javascript:void(0)" onclick="showContent('example5')">随机数</a>
+            <a href="javascript:void(0)" onclick="showContent('example6')">时间函数</a>
+            <a href="javascript:void(0)" onclick="showContent('example7')">条件语句</a>
+            <a href="javascript:void(0)" onclick="showContent('example8')">循环框</a>
+        </div>
+        <div id="content" style="margin-left: 160px;">
+            <div id="intro" class="introduce">
+                <h1>蔬菜汁介绍</h1>
+        </div>
+        <div id="example1" style="display: none;" >
+            <div class="introduce">
+                <h1>bot变量</h1>
+            </div>
+            <div class="kuang">
+                <div class="introduce">
+                    <h2>频道变量</h2>
+                </div>
+                <div>
+                    <h3>获取发言用户ID变量</h3>
+                    <p class="code">%ID%</p>
+                </div>
+                <div>
+                    <h3>获取频道ID变量</h3>
+                    <p class="code">%群号%</p>
+                </div>
+                <div>
+                    <h3>获取子频道ID变量</h3>
+                    <p class="code">%群号%</p>
+                </div>
+                <div>
+                    <h3>获取消息ID变量</h3>
+                    <p class="code">%消息ID%</p>
+                </div>
+                <div>
+                    <h3>获取消息中被@的用户ID变量</h3>
+                    <p class="code">%AT0%,%AT1%,%AT2% 以此类推</p>
+                </div>
+                <div>
+                    <h3>获取发言用户头像变量</h3>
+                    <p class="code">%AT0%</p>
+                </div>
+                <div>
+                    <h3>获取发言用户昵称变量</h3>
+                    <p class="code">%AT0%</p>
+                </div>
+            </div>
+            <div class="kuang">
+                <div class="introduce">
+                    <h2>群变量</h2>
+                </div>
+                <div>
+                    <h3>获取ID变量</h3>
+                    <p class="code">%ID%</p>
+                </div>
+                <div>
+                    <h3>获取群ID变量</h3>
+                    <p class="code">%群号%</p>
+                </div>
+                <div>
+                    <h3>获取消息ID变量</h3>
+                    <p class="code">%消息ID%</p>
+                </div>
+            </div>
+        </div>
+            <div id="example2" style="display: none;">
+                <div class="introduce">
+                    <h1>注释</h1>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>单行注释</h3>
+                        <p class="code">// 注释内容</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>多行注释</h3>
+                        <p class="code">/* 注释内容 */</p>
+                    </div>
+                </div>
+            </div>
+            <div id="example3" style="display: none;">
+                <div class="introduce">
+                    <h1>文件操作函数</h1>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>读取文件内容函数</h3>
+                        <p class="code">$读 路径 键 默认值$</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>写入文件内容函数</h3>
+                        <p class="code">$写 路径 键 数据$</p>
+                    </div>
+                </div>
+            </div>
 
-    <h2>黄瓜</h2>
-    <p>黄瓜是指一种高产的小乔木，原产于亚洲，是一种重要的农作物。黄瓜的营养价值较高，含有丰富的蛋白质、脂肪、维生素、矿物质、微量元素、钙、磷、铁等营养成分。黄瓜的营养价值较高，营养成分丰富，具有很高的营养价值。黄瓜的营养价值较高，营养成分丰富，具有很高的营养价值。</p>
+            <div id="example4" style="display: none;">
+                <div class="introduce">
+                    <h1>赋予值</h1>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <div class="introduce">
+                            <h2>普通赋值</h2>
+                        </div>
+                        <h3>支持多字符赋值</h3>
+                        <p class="code">: //英文冒号后面跟随赋值内容</p>
+                        <h3>示例</h3>
+                        <p class="code">bot:你好，欢迎使用蔬菜汁！</p>
+                        <h3>这样"bot"的值就是"你好，欢迎使用蔬菜汁！"</h3>
+                        <h3> 读取变量的值</h3>
+                        <p class="code">%bot%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <div class="introduce">
+                            <h2>执行函数后赋值</h2>
+                        </div>
+                        <h3>支持多字符赋值</h3>
+                        <p class="code">:$:</p>
+                        <h3>示例</h3>
+                        <p class="code">蔬菜汁:$:$读 蔬菜汁/a.txt %ID% 0$</p>
+                        <h3>这样"蔬菜汁"的值就是先执行读取函数后赋予的值</h3>
+                        <h3> 读取变量的值</h3>
+                        <p class="code">%蔬菜汁%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <div class="introduce">
+                            <h2>绝对赋值</h2>
+                        </div>
+                        <h3>不处理任何函数变量，直接赋值</h3>
+                        <p class="code">::</p>
+                        <h3>示例</h3>
+                        <p class="code">蔬菜汁::$读 蔬菜汁/a.txt %ID% 0$</p>
+                        <h3>"蔬菜汁"的值就是$读 蔬菜汁/a.txt %ID% 0$，不会处理函数变量</h3>
+                        <h3> 读取变量的值</h3>
+                        <p class="code">%蔬菜汁%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <div class="introduce">
+                            <h2>只读变量赋值</h2>
+                        </div>
+                        <h3>不处理任何函数，只处理变量进行赋值</h3>
+                        <p class="code">:%:</p>
+                        <h3>示例</h3>
+                        <p class="code">蔬菜汁:%:$读 蔬菜汁/a.txt %ID% 0$</p>
+                        <h3>"蔬菜汁"的值就是$读 蔬菜汁/a.txt "对应的ID值" 0$，不会处理函数变量</h3>
+                        <h3> 读取变量的值</h3>
+                        <p class="code">%蔬菜汁%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <div class="introduce">
+                            <h2>自增赋值</h2>
+                        </div>
+                        <h3>将变量的值加1</h3>
+                        <p class="code">:+</p>
+                        <h3>示例</h3>
+                        <p class="code">A:1<br>A+:%A%<br>%A%</p>
+                        <h3>后面这个"A"变量的值就是2</h3>
+                        <h3> 读取变量的值</h3>
+                        <p class="code">%A%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <div class="introduce">
+                            <h2>自减赋值</h2>
+                        </div>
+                        <h3>将变量的值减1</h3>
+                        <p class="code">:-</p>
+                        <h3>示例</h3>
+                        <p class="code">A:1<br>A-:%A%<br>%A%</p>
+                        <h3>后面这个"A"变量的值就是0</h3>
+                        <h3> 读取变量的值</h3>
+                        <p class="code">%A%</p>
+                    </div>
+                </div>
+            </div>
+            <div id="example5" style="display: none;">
+                <div class="introduce">
+                    <h1>随机数</h1>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>随机数写法1</h3>
+                        <p class="code">%随机数1-100%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>随机数写法2</h3>
+                        <p class="code">$随机数1-100$</p>
+                    </div>
+                </div>
+                <h3>这个可以按需求使用</h3>
+            </div>
+            <div id="example6" style="display: none;">
+                <div class="introduce">
+                    <h1>时间函数</h1>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>获取时间戳</h3>
+                        <p class="code">%时间戳%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>获取时间戳毫秒</h3>
+                        <p class="code">%毫秒时间戳%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>获取时间戳纳秒</h3>
+                        <p class="code">%纳秒时间戳%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>获取时间字符串--年</h3>
+                        <p class="code">%时间yyyy%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>获取时间字符串--月</h3>
+                        <p class="code">%时间MM%</p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>获取时间字符串--日</h3>
+                        <p class="code">%时间dd%</p>
+                </div>
+            </div>
+        </div>
+        <div id="example7" style="display: none;">
+                <div class="introduce">
+                    <h1>条件语句</h1>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>中文判断</h3>
+                            <p class="code">如果<br>
+                                否则<br>
+                                否则如果
+                            </p>
+                        <h3>示例1</h3>
+                            <p class="code">a:2<br>
+                                如果:a==2<br>
+                                a是2<br>否则<br>
+                                a不是2
+                            </p>
+                        <h3>示例2</h3>
+                            <p class="code">a:2<br
+                                >如果:a==2<br>a是2<br>
+                                否则如果:a==1<br>
+                                a是1<br>
+                                否则<br>
+                                no
+                            </p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>英文判断</h3>
+                            <p class="code">if<br>
+                                end<br>
+                                else
+                            </p>
+                        <h3>示例1</h3>
+                            <p class="code">a:2<br>
+                                if:a==2<br>
+                                a is 2<br>
+                                end:<br>
+                                a is not 2
+                            </p>
+                        <h3>示例2</h3>
+                            <p class="code">a:2<br>
+                                if:a==2<br>
+                                a is 2<br>
+                                else:a==1<br>
+                                a is 1<br>
+                                end:<br>
+                                no
+                            </p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h3>支持逻辑运算符</h3>
+                        <p class="code">和 &<br>
+                            或 |<br>
+                            大于等于 &gt;=<br>
+                            大于 &gt;<br>
+                            小于等于 &lt;=<br>
+                            小于 &lt;<br>
+                            等于 ==<br>
+                            不等于 !=
+                        </p>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h2>混合判断</h2>
+                        <p class="code">()</p>
+                        <h3>示例1</h3>
+                        <p class="code">如果:a==a|(a==a&a==a)<br>
+                            ok<br>
+                            如果尾<br>
+                            如果:false<br>
+                            a<br>
+                            返回<br>
+                            如果尾<br>
+                            b</p>
+                        <h3>最后返回okb</h3>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h2>判断框</h2>
+                        <p class="code">()</p>
+                        <h3>示例1</h3>
+                        <p class="code">如果>a==a<br>
+                            ok<br>
+                            >否则<br>
+                            no<br>
+                            &lt;如果</p>
+                        <h3>示例2</h3>
+                        <p class="code">如果>a==b<br>
+                            ok<br>
+                            >否则如果:a==a<br>
+                                如果>a==a<br>
+                                ok<br>
+                                >否则<br>
+                                no<br>
+                                &lt;如果<br>
+                            &lt;如果</p>
+                        <h3>支持嵌套</h3>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div>
+                        <h2>判断内方法</h2>
+                        <p class="code">&gt;跳过</p>
+                        <p class="code">&lt;终止</p>
+                    </div>
+                </div>
+            </div>
+        <div id="example8" style="display: none;">
+            <div class="introduce">
+                <h1>循环框</h1>
+            </div>
+                <div class="kuang">
+                    <p class="code">
+                        循环&gt;<br>
+                            循环体<br>
+                        &lt;循环
+                    </p>
+                    <h3>示例1</h3>
+                    <p class="code">
+                        循环>i:1=10<br>
+                            %i%<br>
+                        &lt;循环
+                    </p>
+                    <h3>示例2-死循环</h3>
+                    <p class="code">
+                        循环>i<br>
+                        %i%<br>
+                        &lt;循环
+                    </p>
+                    <h3>死循环的次数为32767次</h3>
+                    <h3>遍历JSON无法修改当前循环次数，但是可以使用>终止</h3>
+                    <h3>示例3-遍历JSON</h3>
+                    <p class="code">
+                        循环>i,ii=["a","b"]<br>
+                        %i%=%ii%<br>
+                        &lt;循环
+                    </p>
+                    <h3>可以用在循环框中退出循环</h3>
+                    <p class="code">
+                        循环>i=5<br>
+                        %i%<br>
+                        如果:%i%>2<br>
+                        结束<br>
+                        >终止<br>
+                        &lt;循环
+                    </p>
+                    <h3>循环中支持</h3>
+                    <p class="code">
+                        >跳过<br
+                        >终止循环<br>
+                        >终止<br>
+                    </p>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        function showContent(contentId) {
+            var contents = document.getElementById('content').children;
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+            var selectedContent = document.getElementById(contentId);
+            if (selectedContent) {
+                selectedContent.style.display = 'block';
+            } else {
+                console.error('内容块未找到: ' + contentId);
+            }
+        }
 
-    <h2>西兰花</h2>
-    <p>西兰花是指一种高产的小乔木，原产于亚洲，是一种重要的农作物。西兰花的营养价值较高，含有丰富的蛋白质、脂肪、维生素、矿物质、微量元素、钙、磷、铁等营养成分。西兰花的营养价值较高，营养成分丰富，具有很高的营养价值。西兰花的营养价值较高，营养成分丰富，具有很高的营养价值。</p>
-
-    <h2>茄子</h2>
-    <p>茄子是指一种高产的小乔木，原产于亚洲，是一种重要的农作物。茄子的营养价值较高，含有丰富的蛋白质、脂肪、维生素、矿物质、微量元素、钙、磷、铁等营养成分。茄子的营养价值较高，营养成分丰富，具有很高的营养价值。茄子的营养价值较高，营养成分丰富，具有很高的营养价值。</p>
+        // 默认显示介绍内容
+        showContent('intro');
+    </script>
 </body>
+
 </html>
